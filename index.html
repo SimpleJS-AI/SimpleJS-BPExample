@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BPExample</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+<div class="container">
+    <div class="controls-left controls">
+        <button class="btn btn-default" id="btn-start">
+            <span class="material-symbols-rounded">pause</span>
+        </button>
+        <button class="btn btn-default" id="btn-refresh">
+            <span class="material-symbols-rounded">refresh</span>
+        </button>
+        <button class="btn btn-default" id="btn-delete" onclick="reset()">
+            <span class="material-symbols-rounded">delete_forever</span>
+        </button>
+        <button class="btn btn-default" id="btn-show" onclick="toggleVisibility()">
+            <span class="material-symbols-rounded">visibility</span>
+        </button>
+    </div>
+    <canvas id="canvas" width="184px" height="184px"></canvas>
+    <div class="controls-right controls">
+        <button class="btn btn-default" id="btn-erase" onclick="setDrawMode(false)">
+            <span class="material-symbols-rounded">ink_eraser</span>
+        </button>
+        <button class="btn btn-default" id="btn-draw" onclick="setDrawMode(true, true)">
+            <span class="material-symbols-rounded">draw</span>
+        </button>
+            <button class="btn btn-round" id="btn-color1" onclick="setColor(1)">
+        </button>
+            <button class="btn btn-round" id="btn-color2" onclick="setColor(0)">
+        </button>
+    </div>
+    <div class="selector"></div>
+</div>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</body>
+</html>
