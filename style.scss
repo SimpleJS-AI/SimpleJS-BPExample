@@ -13,6 +13,13 @@
     --c3: #005234;
     --c4: #4eb281;
 }
+
+@font-face {
+    font-family: "Google Sans Text";
+    src: url("assets/fonts/GoogleSansTextMedium.woff2") format("woff2");
+    font-weight: bold;
+}
+
 body{
     background: var(--c1);
 }
@@ -37,6 +44,25 @@ body{
         border-radius: 30px;
         border: 5px solid var(--c2);
     }
+    & .selector {
+        display: grid;
+        grid-template-columns: 64px 64px;
+        grid-template-rows: 40px 64px 64px;
+        column-gap: 8px;
+        row-gap: 8px;
+        align-items: stretch;
+        & .title {
+            align-self: center;
+            height: min-content;
+            grid-column: 1 / span 2;
+            grid-row: 1;
+            font-family: "Google Sans Text", sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: var(--c2);
+        }
+    }
 }
 
 // ELEMENTS
@@ -46,6 +72,14 @@ body{
     cursor: pointer;
     transition: all .2s ease;
     &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.btn-big{
+    border-radius: 12px;
+    border: 5px solid var(--c2);
+    &.active{
         transform: scale(1.1);
     }
 }
@@ -59,28 +93,29 @@ body{
     & span {
         color: var(--c2);
     }
-    &.inactive{
+    &.disabled{
         border-color: var(--c4);
         & span {
             color: var(--c4);
         }
     }
+    &.active{
+        transform: scale(1.1);
+    }
 }
 .btn-round {
     border-radius: 999px;
-    border: 5px solid var(--c4);
+    border: 5px solid var(--c2);
     &#btn-color1{
         background: var(--a1);
         &.active{
             background: var(--a4);
-            border: 5px solid var(--c2);
         }
     }
     &#btn-color2{
         background: var(--b1);
         &.active{
             background: var(--b4);
-            border: 5px solid var(--c2);
         }
     }
 }
