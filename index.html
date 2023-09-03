@@ -8,10 +8,10 @@
 <body>
 <div class="container">
     <div class="controls-left controls">
-        <button class="btn btn-default" id="btn-start">
+        <button class="btn btn-default" id="btn-start" onclick="setTrainingData(); play=true;">
             <span class="material-symbols-rounded">pause</span>
         </button>
-        <button class="btn btn-default" id="btn-refresh">
+        <button class="btn btn-default" id="btn-refresh" onclick="nn = new NeuralNetwork(2,8,1,learningRate)">
             <span class="material-symbols-rounded">refresh</span>
         </button>
         <button class="btn btn-default" id="btn-delete" onclick="reset()">
@@ -22,6 +22,7 @@
         </button>
     </div>
     <canvas id="canvas" width="184px" height="184px"></canvas>
+    <canvas id="canvas2" width="184px" height="184px"></canvas>
     <div class="controls-right controls">
         <button class="btn btn-default" id="btn-erase" onclick="setDrawMode(false)">
             <span class="material-symbols-rounded">ink_eraser</span>
@@ -43,6 +44,8 @@
     </div>
 </div>
 <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.3.2/math.js"></script>
+<script src="https://SimpleJS-AI.github.io/SimpleJS-lib/lib/simple.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

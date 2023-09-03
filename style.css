@@ -25,10 +25,12 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 40px minmax(120px, 184px) 40px 1fr;
-  grid-template-rows: repeat(auto-fill, 184px);
+  grid-template-columns: 40px 184px 40px 136px;
+  grid-template-rows: 184px 184px;
   column-gap: 8px;
   align-items: stretch;
+  justify-items: stretch;
+  width: min-content;
 }
 .container .controls {
   display: grid;
@@ -36,9 +38,17 @@ body {
   grid-template-rows: repeat(auto-fill, 40px);
   row-gap: 8px;
 }
-.container canvas {
+.container #canvas {
   border-radius: 30px;
   border: 5px solid var(--c2);
+  grid-column: 2;
+  grid-row: 1;
+}
+.container #canvas2 {
+  border-radius: 30px;
+  border: 5px solid var(--c2);
+  grid-column: 2;
+  grid-row: 1;
 }
 .container .selector {
   display: grid;

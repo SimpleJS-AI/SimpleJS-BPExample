@@ -695,183 +695,108 @@ let templateDots = [
     ],
     [
         {
-            "x": 41.999996185302734,
-            "y": 12,
+            "x": 149.99999618530273,
+            "y": 30,
             "color": colors[0]
         },
         {
-            "x": 27.999996185302734,
-            "y": 29,
+            "x": 132.99999618530273,
+            "y": 49,
             "color": colors[0]
         },
         {
-            "x": 10.999996185302734,
-            "y": 46,
+            "x": 102.99999618530273,
+            "y": 78,
             "color": colors[0]
         },
         {
-            "x": 72.99999618530273,
-            "y": 17,
-            "color": colors[1]
-        },
-        {
-            "x": 47.999996185302734,
-            "y": 42,
-            "color": colors[1]
-        },
-        {
-            "x": 33.999996185302734,
-            "y": 64,
-            "color": colors[1]
-        },
-        {
-            "x": 19.999996185302734,
-            "y": 80,
-            "color": colors[1]
-        },
-        {
-            "x": 117.99999618530273,
-            "y": 17,
+            "x": 76.99999618530273,
+            "y": 106,
             "color": colors[0]
         },
         {
-            "x": 94.99999618530273,
-            "y": 41,
-            "color": colors[0]
-        },
-        {
-            "x": 73.99999618530273,
-            "y": 62,
-            "color": colors[0]
-        },
-        {
-            "x": 59.999996185302734,
-            "y": 81,
-            "color": colors[0]
-        },
-        {
-            "x": 39.999996185302734,
-            "y": 102,
-            "color": colors[0]
-        },
-        {
-            "x": 20.999996185302734,
-            "y": 118,
-            "color": colors[0]
-        },
-        {
-            "x": 10.999996185302734,
-            "y": 132,
-            "color": colors[0]
-        },
-        {
-            "x": 159.99999618530273,
-            "y": 24,
-            "color": colors[1]
-        },
-        {
-            "x": 129.99999618530273,
-            "y": 48,
-            "color": colors[1]
-        },
-        {
-            "x": 103.99999618530273,
-            "y": 77,
-            "color": colors[1]
-        },
-        {
-            "x": 87.99999618530273,
-            "y": 100,
-            "color": colors[1]
-        },
-        {
-            "x": 71.99999618530273,
-            "y": 117,
-            "color": colors[1]
-        },
-        {
-            "x": 51.999996185302734,
-            "y": 134,
-            "color": colors[1]
-        },
-        {
-            "x": 33.999996185302734,
-            "y": 149,
-            "color": colors[1]
-        },
-        {
-            "x": 19.999996185302734,
-            "y": 164,
-            "color": colors[1]
-        },
-        {
-            "x": 163.99999618530273,
-            "y": 58,
-            "color": colors[0]
-        },
-        {
-            "x": 140.99999618530273,
-            "y": 79,
-            "color": colors[0]
-        },
-        {
-            "x": 118.99999618530273,
-            "y": 105,
-            "color": colors[0]
-        },
-        {
-            "x": 95.99999618530273,
+            "x": 53.999996185302734,
             "y": 128,
             "color": colors[0]
         },
         {
-            "x": 84.99999618530273,
-            "y": 139,
+            "x": 32.999996185302734,
+            "y": 149,
             "color": colors[0]
         },
         {
-            "x": 67.99999618530273,
-            "y": 154,
+            "x": 18.999996185302734,
+            "y": 162,
             "color": colors[0]
         },
         {
-            "x": 55.999996185302734,
-            "y": 168,
-            "color": colors[0]
+            "x": 160.99999618530273,
+            "y": 88,
+            "color": colors[1]
         },
         {
-            "x": 163.99999618530273,
+            "x": 135.99999618530273,
+            "y": 110,
+            "color": colors[1]
+        },
+        {
+            "x": 114.99999618530273,
+            "y": 133,
+            "color": colors[1]
+        },
+        {
+            "x": 92.99999618530273,
+            "y": 157,
+            "color": colors[1]
+        },
+        {
+            "x": 99.99999618530273,
+            "y": 24,
+            "color": colors[1]
+        },
+        {
+            "x": 69.99999618530273,
+            "y": 48,
+            "color": colors[1]
+        },
+        {
+            "x": 39.999996185302734,
+            "y": 76,
+            "color": colors[1]
+        },
+        {
+            "x": 14.999996185302734,
             "y": 94,
             "color": colors[1]
         },
         {
-            "x": 140.99999618530273,
-            "y": 126,
-            "color": colors[1]
+            "x": 29.999996185302734,
+            "y": 10,
+            "color": colors[0]
         },
         {
-            "x": 120.99999618530273,
-            "y": 148,
-            "color": colors[1]
+            "x": 23.999996185302734,
+            "y": 24,
+            "color": colors[0]
         },
         {
-            "x": 101.99999618530273,
-            "y": 164,
-            "color": colors[1]
+            "x": 9.999996185302734,
+            "y": 33,
+            "color": colors[0]
         },
         {
-            "x": 162.99999618530273,
-            "y": 137,
+            "x": 168.99999618530273,
+            "y": 152,
+            "color": colors[0]
+        },
+        {
+            "x": 159.99999618530273,
+            "y": 157,
             "color": colors[0]
         },
         {
             "x": 152.99999618530273,
-            "y": 150,
-            "color": colors[0]
-        },
-        {
-            "x": 136.99999618530273,
-            "y": 165,
+            "y": 168,
             "color": colors[0]
         }
     ],
@@ -982,6 +907,8 @@ function setColor(colorID) {
 
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
+let canvas2 = document.getElementById("canvas2");
+let ctx2 = canvas2.getContext("2d");
 
 // dots
 let dots = [];
@@ -1005,15 +932,17 @@ function removeDot(x,y) {
     if (index > -1) {
         dots.splice(index, 1);
     }
+    setTrainingData();
 }
 
 function drawDots() {
     for (let i = 0; i < dots.length; i++) {
-        ctx.fillStyle = dots[i].color;
-        ctx.beginPath();
-        ctx.arc(dots[i].x, dots[i].y, 5, 0, 2 * Math.PI);
-        ctx.fill();
+        ctx2.fillStyle = dots[i].color;
+        ctx2.beginPath();
+        ctx2.arc(dots[i].x, dots[i].y, 5, 0, 2 * Math.PI);
+        ctx2.fill();
     }
+    setTrainingData();
 }
 
 function toggleVisibility(){
@@ -1038,13 +967,13 @@ function setDrawMode(value, manually = false){
     setVisibility(true);
     if (value){
         drawMode = true;
-        document.querySelector("#btn-draw").classList.add("active");
-        document.querySelector("#btn-erase").classList.remove("active");
+        document.querySelector("#btn-erase").classList.add("inactive");
+        document.querySelector("#btn-draw").classList.remove("inactive");
         if (manually) setColor(activeColor);
     } else {
         drawMode = false;
-        document.querySelector("#btn-erase").classList.add("active");
-        document.querySelector("#btn-draw").classList.remove("active");
+        document.querySelector("#btn-draw").classList.add("inactive");
+        document.querySelector("#btn-erase").classList.remove("inactive");
         document.querySelectorAll(".btn-round").forEach(btn => {btn.classList.remove("active")});
     }
 }
@@ -1064,30 +993,79 @@ function loadTemplate(template){
     if(template !== 0) {
         document.querySelector("#t" + template).classList.add("active");
         dots = templateDots[template - 1];
+        setTrainingData();
     }
 }
 
 // draw
-
+let play = false;
+let nextFrameTime = performance.now();
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 function draw() {
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx2.clearRect(0,0, canvas.width, canvas.height);
+    if (play)
+        while (true) {
+            train();
+            if(performance.now() >= nextFrameTime + 1000/30){
+                break;
+            }
+        }
     if (visible) drawDots();
-    requestAnimationFrame(draw);
+    nextFrameTime = performance.now();
+    window.requestAnimationFrame(draw);
 }
 
+
+// Neural Network
+let learningRate = 0.5;
+let nn = new NeuralNetwork(2, 8, 1, learningRate);
+let inputs = [];
+let outputs = [];
+
+function setTrainingData() {
+    inputs = [];
+    outputs = [];
+    if(dots.length < 1){
+        inputs.push([0,0]);
+        outputs.push([0]);
+    }
+    for (let i = 0; i < dots.length; i++) {
+        inputs.push([dots[i].x/canvas.width, dots[i].y/canvas.height]);
+        outputs.push(dots[i].color === colors[0] ? [1] : [0]);
+    }
+}
+
+function train() {
+    if (inputs.length < 1) return;
+    let index = Math.floor(Math.random() * inputs.length);
+    let e = nn.bp(inputs[index], outputs[index]);
+    let a = Math.floor(Math.random() * 50) / 50;
+    let b = Math.floor(Math.random() * 50) / 50;
+    let c = nn.ff([a, b]);
+    ctx.fillStyle = mixColors(c[0]);
+    ctx.fillRect(a * canvas.width, b * canvas.height, canvas.width / 50, canvas.height / 50);
+}
+const c1 = [168, 199, 250];
+const c2 = [255, 179, 179];
+function mixColors(p) {
+    if(p > .5){ // fade over white
+        return `rgb(${Math.floor(c1[0] * p + 255 * (1 - p))}, ${Math.floor(c1[1] * p + 255 * (1 - p))}, ${Math.floor(c1[2] * p + 255 * (1 - p))})`;
+    } else {
+        return `rgb(${Math.floor(c2[0] * (1 - p) + 255 * p)}, ${Math.floor(c2[1] * (1 - p) + 255 * p)}, ${Math.floor(c2[2] * (1 - p) + 255 * p)})`;
+    }
+}
 
 // Event Listeners
 
 // add eventlistener when clicking on canvas
-canvas.addEventListener("click", function (e) {
+canvas2.addEventListener("click", function (e) {
     loadTemplate(0);
     let rect = canvas.getBoundingClientRect();
     let x = e.clientX - rect.left;
     let y = e.clientY - rect.top;
     if(drawMode) addDot(x, y);
     else removeDot(x,y);
-    console.log("dot placed");
 });
 
 
