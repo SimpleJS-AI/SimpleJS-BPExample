@@ -1004,13 +1004,21 @@ ctx.fillStyle = "white";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 function draw() {
     ctx2.clearRect(0,0, canvas.width, canvas.height);
-    if (play)
+    if (play) {
         while (true) {
             train();
-            if(performance.now() >= nextFrameTime + 1000/30){
+            if (performance.now() >= nextFrameTime + 1000 / 30) {
                 break;
             }
         }
+        let error = 0;
+        for (const e in errorDataSet) {
+            error += errorDataSet[e];
+        }
+        error /= errorDataSet.length;
+        addData(error);
+        errorDataSet = [];
+    }
     if (visible) drawDots();
     nextFrameTime = performance.now();
     window.requestAnimationFrame(draw);
@@ -1018,7 +1026,7 @@ function draw() {
 
 
 // Neural Network
-let learningRate = 0.5;
+let learningRate = 0.3;
 let nn = new NeuralNetwork(2, 8, 1, learningRate);
 let inputs = [];
 let outputs = [];
@@ -1035,11 +1043,12 @@ function setTrainingData() {
         outputs.push(dots[i].color === colors[0] ? [1] : [0]);
     }
 }
-
+let errorDataSet = [];
 function train() {
     if (inputs.length < 1) return;
     let index = Math.floor(Math.random() * inputs.length);
     let e = nn.bp(inputs[index], outputs[index]);
+    errorDataSet.push(Math.abs(e[2][0]));
     let a = Math.floor(Math.random() * 50) / 50;
     let b = Math.floor(Math.random() * 50) / 50;
     let c = nn.ff([a, b]);
@@ -1054,6 +1063,17 @@ function mixColors(p) {
     } else {
         return `rgb(${Math.floor(c2[0] * (1 - p) + 255 * p)}, ${Math.floor(c2[1] * (1 - p) + 255 * p)}, ${Math.floor(c2[2] * (1 - p) + 255 * p)})`;
     }
+}
+
+function togglePlay(){
+    play = !play;
+    if(play){
+        document.querySelector("#btn-start span").textContent = "pause";
+        setTrainingData();
+    }else{
+        document.querySelector("#btn-start span").textContent = "play_arrow";
+    }
+
 }
 
 // Event Listeners
@@ -1076,7 +1096,103 @@ canvas2.addEventListener("click", function (e) {
 setColor(1);
 
 
+// LINECHART
 
 
+let lineChart = new Chart(document.getElementById("line-chart"), {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{
+            label: '# of Votes',
+            data: [1],
+            borderWidth: 1,
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            pointHitRadius: 0,
+            tension: 0,
+            borderColor: getComputedStyle(document.documentElement).getPropertyValue("--c2")
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        plugins: {
+            legend: {
+                display: false
+            },
+            tooltip: {
+                enabled: false
+            }
+        },
+        scales: {
+            y: {
+                display: false,
+                beginAtZero: true,
+            },
+            x: {
+                display: false,
+                beginAtZero: true
+            }
+        }
+    }
+});
+document.getElementById("line-chart").height = 40;
+document.getElementById("line-chart").width = 232;
+
+function addData(data) {
+    lineChart.data.datasets[0].data.push(data);
+    lineChart.data.labels.push("");
+    /*if (lineChart.data.datasets[0].data.length > 323) {
+        lineChart.data.datasets[0].data.shift();
+        lineChart.data.labels.shift();
+    }*/
+    lineChart.update();
+    document.querySelector(".loss-info").textContent = "Loss: " + Math.round(data * 1000) / 1000;}
+function resetData() {
+    lineChart.data.datasets[0].data = [];
+    lineChart.data.labels = [""];
+    lineChart.update();
+}
+
+
+// SLIDER
+
+function updateLearningRate(value) {
+    switch (parseInt(value)) {
+        case 0:
+            learningRate = 0.0001;
+            break;
+        case 1:
+            learningRate = 0.001;
+            break;
+        case 3:
+            learningRate = 0.01;
+            break;
+        case 4:
+            learningRate = 0.03;
+            break;
+        case 5:
+            learningRate = 0.1;
+            break;
+        case 6:
+            learningRate = 0.3;
+            break;
+        case 7:
+            learningRate = 1;
+            break;
+        case 8:
+            learningRate = 3;
+            break;
+        case 9:
+            learningRate = 10;
+            break;
+    }
+    console.log(learningRate);
+    nn.lr = learningRate;
+    document.querySelector(".slider-value").textContent = learningRate;
+
+}
 
 draw();

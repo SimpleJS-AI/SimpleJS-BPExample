@@ -29,8 +29,9 @@ body{
     padding: 0;
     display: grid;
     grid-template-columns: 40px 184px 40px 136px;
-    grid-template-rows: 184px 184px;
+    grid-template-rows: 184px 50px;
     column-gap: 8px;
+    row-gap: 8px;
     align-items: stretch;
     justify-items: stretch;
     width: min-content;
@@ -71,6 +72,73 @@ body{
             font-weight: bold;
             text-align: center;
             color: var(--c2);
+        }
+    }
+
+    & .chart-container{
+    }
+    & .loss-info {
+        align-self: center;
+        font-family: "Google Sans Text", sans-serif;
+        font-size: 12px;
+    }
+    & .slider-container{
+        align-self: center;
+        text-align: center;
+        font-family: "Google Sans Text", sans-serif;
+        font-size: 12px;
+        grid-column: 1 / span 2;
+        position: relative;
+        width: 100%;
+        & .range-slider{
+            display: grid;
+            grid-template-columns: 1fr 32px;
+            column-gap: 8px;
+            align-items: center;
+        }
+        & input[type="range"] {
+            /* removing default appearance */
+            -webkit-appearance: none;
+            appearance: none;
+            /* creating a custom design */
+            width: 100%;
+            cursor: pointer;
+            outline: none;
+            /*  slider progress trick  */
+            overflow: hidden;
+            border-radius: 16px;
+            &::-webkit-slider-runnable-track {
+                height: 15px;
+                background: var(--c4);
+                border-radius: 16px;
+            }
+            &::-moz-range-track {
+                height: 15px;
+                background: var(--c4);
+                border-radius: 16px;
+            }
+            &::-webkit-slider-thumb {
+                /* removing default appearance */
+                -webkit-appearance: none;
+                appearance: none;
+                /* creating a custom design */
+                height: 15px;
+                width: 15px;
+                background-color: var(--c1);
+                border-radius: 50%;
+                border: 2px solid var(--c2);
+                /*  slider progress trick  */
+                box-shadow: -407px 0 0 400px var(--c2);
+            }
+            &::-moz-range-thumb {
+                height: 15px;
+                width: 15px;
+                background-color: var(--c1);
+                border-radius: 50%;
+                border: 1px solid var(--c2);
+                /*  slider progress trick  */
+                box-shadow: -407px 0 0 400px var(--c2);
+            }
         }
     }
 }
