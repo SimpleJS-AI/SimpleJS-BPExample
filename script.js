@@ -1106,6 +1106,7 @@ let resizeObserver = new ResizeObserver(function () {
     //canvas.height = canvas2.height  = canvas.offsetWidth - 4;
     ctx.canvas.width = ctx2.canvas.width = ctx.canvas.offsetWidth-16;
     ctx.canvas.height = ctx2.canvas.height = ctx.canvas.offsetHeight-16;
+    //if()
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx2.fillStyle = "white";

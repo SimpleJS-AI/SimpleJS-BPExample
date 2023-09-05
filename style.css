@@ -17,7 +17,7 @@
   src: url("assets/fonts/GoogleSansTextMedium.woff2") format("woff2");
   font-weight: bold;
 }
-body {
+body, html {
   background: var(--c1);
 }
 
@@ -25,8 +25,8 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 40px 1fr 40px 136px;
-  grid-template-rows: auto 80px 80px;
+  grid-template-columns: 40px calc(100vw - 168px - 40px) 40px 88px;
+  grid-template-rows: calc(100vh - 160px - 32px) 80px 80px;
   column-gap: 8px;
   row-gap: 8px;
   align-items: stretch;
@@ -44,33 +44,19 @@ body {
   border: 5px solid var(--c2);
   grid-column: 2;
   grid-row: 1;
-  aspect-ratio: 1/1;
 }
 .container #canvas2 {
   border-radius: 30px;
   border: 5px solid var(--c2);
   grid-column: 2;
   grid-row: 1;
-  aspect-ratio: 1/1;
 }
 .container .selector {
   display: grid;
-  grid-template-columns: 64px 64px;
-  grid-template-rows: 40px 64px 64px;
+  grid-template-rows: repeat(auto-fill, 88px);
   column-gap: 8px;
   row-gap: 8px;
   align-items: stretch;
-}
-.container .selector .title {
-  align-self: center;
-  height: min-content;
-  grid-column: 1/span 2;
-  grid-row: 1;
-  font-family: "Google Sans Text", sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  color: var(--c2);
 }
 .container .chart-container {
   grid-column: 2/span 2;
