@@ -994,6 +994,8 @@ function loadTemplate(template){
         document.querySelector("#t" + template).classList.add("active");
         dots = templateDots[template - 1];
         setTrainingData();
+        nn = new NeuralNetwork(2,8,1,learningRate);
+        resetData();
     }
 }
 
