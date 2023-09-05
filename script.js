@@ -927,19 +927,20 @@ function removeDot(x,y) {
     const index = dots.findIndex(dot => {
         const dx = dot.x - x;
         const dy = dot.y - y;
-        return Math.sqrt(dx * dx + dy * dy) < 5;
+        return Math.sqrt(dx * dx + dy * dy) < radius*1.5;
     });
     if (index > -1) {
         dots.splice(index, 1);
     }
     setTrainingData();
 }
+let radius = 10;
 
 function drawDots() {
     for (let i = 0; i < dots.length; i++) {
         ctx2.fillStyle = dots[i].color;
         ctx2.beginPath();
-        ctx2.arc(dots[i].x, dots[i].y, 5, 0, 2 * Math.PI);
+        ctx2.arc(dots[i].x, dots[i].y, radius, 0, 2 * Math.PI);
         ctx2.fill();
     }
     setTrainingData();
@@ -992,11 +993,21 @@ function loadTemplate(template){
     document.querySelectorAll(".btn-big").forEach(btn => {btn.classList.remove("active")});
     if(template !== 0) {
         document.querySelector("#t" + template).classList.add("active");
-        dots = templateDots[template - 1];
+        //dots = templateDots[template - 1];
+        dots = getTemplateDots(template);
         setTrainingData();
         nn = new NeuralNetwork(2,8,1,learningRate);
         resetData();
     }
+}
+
+function getTemplateDots(t){
+    let template = templateDots[t-1];
+    for(let i = 0; i < template.length; i++){
+        template[i].x *= canvas.width/184;
+        template[i].y *= canvas.height/184;
+    }
+    return template;
 }
 
 // draw
@@ -1080,7 +1091,7 @@ function togglePlay(){
 
 // Event Listeners
 
-// add eventlistener when clicking on canvas
+
 canvas2.addEventListener("click", function (e) {
     loadTemplate(0);
     let rect = canvas.getBoundingClientRect();
@@ -1089,6 +1100,21 @@ canvas2.addEventListener("click", function (e) {
     if(drawMode) addDot(x, y);
     else removeDot(x,y);
 });
+
+let resizeObserver = new ResizeObserver(function () {
+    //canvas.width = canvas2.width = canvas.offsetWidth - 4;
+    //canvas.height = canvas2.height  = canvas.offsetWidth - 4;
+    ctx.canvas.width = ctx2.canvas.width = ctx.canvas.offsetWidth-16;
+    ctx.canvas.height = ctx2.canvas.height = ctx.canvas.offsetHeight-16;
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx2.fillStyle = "white";
+    ctx2.fillRect(0, 0, canvas.width, canvas.height);
+}
+);
+resizeObserver.observe(document.getElementById("canvas"));
+
+
 
 
 
@@ -1196,5 +1222,6 @@ function updateLearningRate(value) {
     document.querySelector(".slider-value").textContent = learningRate;
 
 }
+
 
 draw();

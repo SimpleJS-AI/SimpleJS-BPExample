@@ -25,8 +25,8 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 40px 184px 40px 136px;
-  grid-template-rows: 184px 50px;
+  grid-template-columns: 40px 1fr 40px 136px;
+  grid-template-rows: auto 80px 80px;
   column-gap: 8px;
   row-gap: 8px;
   align-items: stretch;
@@ -44,12 +44,14 @@ body {
   border: 5px solid var(--c2);
   grid-column: 2;
   grid-row: 1;
+  aspect-ratio: 1/1;
 }
 .container #canvas2 {
   border-radius: 30px;
   border: 5px solid var(--c2);
   grid-column: 2;
   grid-row: 1;
+  aspect-ratio: 1/1;
 }
 .container .selector {
   display: grid;
@@ -70,7 +72,11 @@ body {
   text-align: center;
   color: var(--c2);
 }
+.container .chart-container {
+  grid-column: 2/span 2;
+}
 .container .loss-info {
+  grid-column: 1;
   align-self: center;
   font-family: "Google Sans Text", sans-serif;
   font-size: 12px;
@@ -80,7 +86,7 @@ body {
   text-align: center;
   font-family: "Google Sans Text", sans-serif;
   font-size: 12px;
-  grid-column: 1/span 2;
+  grid-column: 1/span 3;
   position: relative;
   width: 100%;
 }
