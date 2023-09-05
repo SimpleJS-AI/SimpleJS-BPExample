@@ -62,7 +62,7 @@ body, html{
         align-items: stretch;
         @for $i from 1 through 4 {
             & #t#{$i} {
-                background-image: url("assets/img/#{$i}.png");
+                background-image: url("assets/img/t#{$i}.png");
                 background-size: cover;
             }
         }

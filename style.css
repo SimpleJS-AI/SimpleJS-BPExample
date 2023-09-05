@@ -59,19 +59,19 @@ body, html {
   align-items: stretch;
 }
 .container .selector #t1 {
-  background-image: url("assets/img/1.png");
+  background-image: url("assets/img/t1.png");
   background-size: cover;
 }
 .container .selector #t2 {
-  background-image: url("assets/img/2.png");
+  background-image: url("assets/img/t2.png");
   background-size: cover;
 }
 .container .selector #t3 {
-  background-image: url("assets/img/3.png");
+  background-image: url("assets/img/t3.png");
   background-size: cover;
 }
 .container .selector #t4 {
-  background-image: url("assets/img/4.png");
+  background-image: url("assets/img/t4.png");
   background-size: cover;
 }
 .container .chart-container {
