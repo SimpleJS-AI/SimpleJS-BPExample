@@ -1002,10 +1002,13 @@ function loadTemplate(template){
 }
 
 function getTemplateDots(t){
-    let template = templateDots[t-1];
-    for(let i = 0; i < template.length; i++){
-        template[i].x *= canvas.width/184;
-        template[i].y *= canvas.height/184;
+    let template = [];
+    for(let i = 0; i < templateDots[t-1].length; i++){
+        template.push({
+            x: templateDots[t-1][i].x * canvas.width/184,
+            y: templateDots[t-1][i].y * canvas.height/184,
+            color: templateDots[t-1][i].color
+        });
     }
     return template;
 }
@@ -1106,7 +1109,6 @@ let resizeObserver = new ResizeObserver(function () {
     //canvas.height = canvas2.height  = canvas.offsetWidth - 4;
     ctx.canvas.width = ctx2.canvas.width = ctx.canvas.offsetWidth-16;
     ctx.canvas.height = ctx2.canvas.height = ctx.canvas.offsetHeight-16;
-    //if()
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx2.fillStyle = "white";
