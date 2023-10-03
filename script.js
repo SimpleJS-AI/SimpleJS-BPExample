@@ -957,10 +957,10 @@ let visible = true;
 function setVisibility(value){
     if (value){
         visible = true;
-        document.querySelector("#btn-show span").textContent = "visibility";
+        document.querySelector("#btn-show span").textContent = "visibility_off";
     } else {
         visible = false;
-        document.querySelector("#btn-show span").textContent = "visibility_off"
+        document.querySelector("#btn-show span").textContent = "visibility"
     }
 }
 
