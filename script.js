@@ -1228,12 +1228,13 @@ function updateLearningRate(value) {
 
 
 draw();
-
+let presentationMode = false;
 // PRESENTATION MODE
 const query = window.location.search;
 const queryParams = new URLSearchParams(query);
 if(queryParams.get("presentation") === "true"){
     console.log("presentation mode");
+    presentationMode = true;
     let canvas = document.getElementById("canvas");
     let canvas2 = document.getElementById("canvas2");
     document.body.style.overflow = "hidden";
@@ -1266,3 +1267,10 @@ if(queryParams.get("presentation") === "true"){
 
     resizeObserver.disconnect();
 }
+
+// eventlistener for keypresses Page Down
+document.addEventListener("keydown", function (e) {
+    if(e.key === "PageDown" && presentationMode){
+        window.location.href = window.location.href.split("?")[0] + "?presentation=true&template=" + (parseInt(queryParams.get("template")) + 1);
+    }
+});
