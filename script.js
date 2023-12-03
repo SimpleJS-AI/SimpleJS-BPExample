@@ -1262,7 +1262,9 @@ if(queryParams.get("presentation") === "true"){
     ctx2.fillRect(0, 0, canvas.width, canvas.height);
     if(queryParams.get("template") !== null){
         loadTemplate(parseInt(queryParams.get("template")));
-        togglePlay();
+        if(parseInt(queryParams.get("template")) > 0 && parseInt(queryParams.get("template")) < 5) {
+            togglePlay();
+        }
     }
 
     resizeObserver.disconnect();
