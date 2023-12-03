@@ -1236,26 +1236,32 @@ draw();
 const query = window.location.search;
 const queryParams = new URLSearchParams(query);
 if(queryParams.get("presentation") === "true"){
+    document.body.style.backgroundColor = "black";
+    document.body.style.margin = "0";
+    document.body.style.height = "3000px";
     console.log("presentation mode");
     presentationMode = true;
     let canvas = document.getElementById("canvas");
     let canvas2 = document.getElementById("canvas2");
     document.body.style.overflow = "hidden";
     canvas.style.position = "absolute";
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-    canvas.style.width = "100%";
+    canvas.style.top = "50%";
+    canvas.style.left = "50%";
+    canvas.style.transform = "translate(-50%, -50%)";
     canvas.style.height = "100%";
+    canvas.style.width = canvas.getBoundingClientRect().height + "px";
     canvas.style.border = "none";
     canvas.style.borderRadius = "0";
     canvas2.style.position = "absolute";
-    canvas2.style.top = "0";
-    canvas2.style.left = "0";
-    canvas2.style.width = "100%";
+    canvas2.style.top = "50%";
+    canvas2.style.left = "50%";
+    canvas2.style.transform = "translate(-50%, -50%)";
     canvas2.style.height = "100%";
+    canvas2.style.width = canvas2.getBoundingClientRect().height + "px";
     canvas2.style.border = "none";
     canvas2.style.borderRadius = "0";
-    document.querySelector(".slider-container").style.display = "none";
+    document.querySelectorAll(".slider-container, .controls, .selector, .slider-container, .loss-info, .chart-container").forEach(x => x.style.display = "none");
+
 
     ctx.canvas.width = ctx2.canvas.width = ctx.canvas.offsetWidth-16;
     ctx.canvas.height = ctx2.canvas.height = ctx.canvas.offsetHeight-16;
@@ -1267,8 +1273,11 @@ if(queryParams.get("presentation") === "true"){
         loadTemplate(parseInt(queryParams.get("template")));
         if(parseInt(queryParams.get("template")) > 0 && parseInt(queryParams.get("template")) < 3) {
             togglePlay();
+        }else{
+            canvas.style.display = "none";
+            canvas2.style.display = "none";
         }
-        if(parseInt(queryParams.get("template")) === 3){
+        if(parseInt(queryParams.get("template")) === 4){
             window.location.href = "https://simplejs-ai.github.io/SimpleJS-FlappyBird/?presentation=true";
         }
     }
