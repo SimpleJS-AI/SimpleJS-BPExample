@@ -1228,3 +1228,41 @@ function updateLearningRate(value) {
 
 
 draw();
+
+// PRESENTATION MODE
+const query = window.location.search;
+const queryParams = new URLSearchParams(query);
+if(queryParams.get("presentation") === "true"){
+    console.log("presentation mode");
+    let canvas = document.getElementById("canvas");
+    let canvas2 = document.getElementById("canvas2");
+    document.body.style.overflow = "hidden";
+    canvas.style.position = "absolute";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.border = "none";
+    canvas.style.borderRadius = "0";
+    canvas2.style.position = "absolute";
+    canvas2.style.top = "0";
+    canvas2.style.left = "0";
+    canvas2.style.width = "100%";
+    canvas2.style.height = "100%";
+    canvas2.style.border = "none";
+    canvas2.style.borderRadius = "0";
+    document.querySelector(".slider-container").style.display = "none";
+
+    ctx.canvas.width = ctx2.canvas.width = ctx.canvas.offsetWidth-16;
+    ctx.canvas.height = ctx2.canvas.height = ctx.canvas.offsetHeight-16;
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx2.fillStyle = "white";
+    ctx2.fillRect(0, 0, canvas.width, canvas.height);
+    if(queryParams.get("template") !== null){
+        loadTemplate(parseInt(queryParams.get("template")));
+        togglePlay();
+    }
+
+    resizeObserver.disconnect();
+}
