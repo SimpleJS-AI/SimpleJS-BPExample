@@ -1262,8 +1262,11 @@ if(queryParams.get("presentation") === "true"){
     ctx2.fillRect(0, 0, canvas.width, canvas.height);
     if(queryParams.get("template") !== null){
         loadTemplate(parseInt(queryParams.get("template")));
-        if(parseInt(queryParams.get("template")) > 0 && parseInt(queryParams.get("template")) < 5) {
+        if(parseInt(queryParams.get("template")) > 0 && parseInt(queryParams.get("template")) < 3) {
             togglePlay();
+        }
+        if(parseInt(queryParams.get("template")) === 3){
+            window.location.href = "https://simplejs-ai.github.io/SimpleJS-FlappyBird/?presentation=true";
         }
     }
 
