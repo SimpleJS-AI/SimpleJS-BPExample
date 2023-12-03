@@ -884,6 +884,8 @@ let templateDots = [
     ]
 ];
 
+let presentationMode = false;
+
 
 // Button Functions
 let activeColor;
@@ -1096,6 +1098,7 @@ function togglePlay(){
 
 
 canvas2.addEventListener("click", function (e) {
+    if(presentationMode) return;
     loadTemplate(0);
     let rect = canvas.getBoundingClientRect();
     let x = e.clientX - rect.left;
@@ -1228,7 +1231,7 @@ function updateLearningRate(value) {
 
 
 draw();
-let presentationMode = false;
+
 // PRESENTATION MODE
 const query = window.location.search;
 const queryParams = new URLSearchParams(query);
